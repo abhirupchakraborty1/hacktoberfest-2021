@@ -1,6 +1,6 @@
-#include<stdio.h>
+#include<stdio.h>//Including the standard input output header file
 
-int isPrime1(int n, int *count)
+int isPrime1(int n, int *count)//the isPrime1() function which takes 2 parameters
 {
     int i, c=0;
     (*count)++;
@@ -17,7 +17,7 @@ int isPrime1(int n, int *count)
     (*count) += i;
 
     (*count)++;
-    if(c == 2)
+    if(c == 2)//if the valueof c is equal to 2
     {
         (*count)++;
         return 1;
@@ -27,7 +27,7 @@ int isPrime1(int n, int *count)
     return 0;
 }
 
-int isPrime2(int n, int *count)
+int isPrime2(int n, int *count)//the isPrime2() function which takes 2 parameters
 {
     int i, c=0;
     (*count)++;
@@ -35,7 +35,7 @@ int isPrime2(int n, int *count)
     for(i=2; i<n; i++)
     {
         (*count)++;
-        if(n%i == 0)
+        if(n%i == 0)//if n is completely divisible by i
         {
             c++;
             (*count)++;
@@ -46,7 +46,7 @@ int isPrime2(int n, int *count)
     (*count) += i-1;
 
     (*count)++;
-    if(c == 0 && n>1)
+    if(c == 0 && n>1)//if the value of c is equals to zero and the value of n is greater than 1
     {
         (*count)++;
         return 1;
@@ -56,7 +56,7 @@ int isPrime2(int n, int *count)
     return 0;
 }
 
-int isPrime3(int n, int *count)
+int isPrime3(int n, int *count)//the isPrime3() function which takes 2 parameters
 {
     int i, c=0;
     (*count)++;
@@ -65,7 +65,7 @@ int isPrime3(int n, int *count)
     for(i=2; i <= n/2; i++)
     {
         (*count)++;
-        if(n%i == 0)
+        if(n%i == 0)//if n is completely divisible by i
         {
             c++;
             (*count)++;
@@ -76,7 +76,7 @@ int isPrime3(int n, int *count)
     (*count) += i-1;
 
     (*count)++;
-    if(c == 0 && n>1)
+    if(c == 0 && n>1)//if the value of c is equals to zero and the value of n is greater than 1
     {
         (*count)++;
         return 1;
@@ -86,7 +86,7 @@ int isPrime3(int n, int *count)
     return 0;
 }
 
-int main()
+int main()//the main function
 {
     int n, i, check1, check2, check3, count1=0, count2=0, count3=0;
 
@@ -94,7 +94,7 @@ int main()
     {
         count1 = count2 = count3 = 0;
         printf("Enter a number\n");
-        scanf("%d", &n);
+        scanf("%d", &n);//accepting the value of n from the user
         check1 = isPrime1(n, &count1);
         check2 = isPrime2(n, &count2);
         check3 = isPrime3(n, &count3);
